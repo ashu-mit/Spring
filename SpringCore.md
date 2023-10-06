@@ -7,11 +7,66 @@ In the context of the Spring framework, tight coupling refers to a situation whe
 ---
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
+
 ![img_3.png](img_3.png)
 
+In Spring framework, IOC stands for Inversion of Control. IOC container is a core feature of Spring that manages the lifecycle of Java objects and their dependencies.
+
+An IOC container is responsible for creating objects, wiring them together, configuring them, and managing their complete lifecycle from creation to destruction. The container achieves this by reading the configuration metadata from XML, Java annotations, or Java code.
+
+There are two types of IOC containers in Spring: BeanFactory and ApplicationContext. The ApplicationContext is a more advanced container that provides additional features such as internationalization, event propagation, and integration with other frameworks.
+
 ---
+ 
+
 ### Spring Core
+
 The Spring Core dependency provides the basic building blocks of the framework, such as the IoC (Inversion of Control) container and the DI (Dependency Injection) mechanism. It also includes utilities for working with resources, such as files and streams, as well as support for internationalization and exception handling.
 
 ### Spring Context 
+
 The Spring Context dependency builds on top of the Spring Core dependency and provides additional functionality for configuring and managing the application context. This includes support for AOP (Aspect-Oriented Programming), event handling, and integration with other frameworks and technologies, such as JPA (Java Persistence API) and JMS (Java Message Service).
+
+---
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)
+
+>Constructor Injection:
+
+In this type of DI, dependencies are injected through a class constructor. The IoC container creates an instance of the class and injects the required dependencies into the constructor parameters. This approach ensures that the class is fully initialized before it is used.
+
+>Setter Injection
+
+In this type of DI, dependencies are injected through setter methods. The IoC container creates an instance of the class and calls the setter methods with the required dependencies. This approach allows for more flexibility in changing dependencies at runtime.
+
+![img_8.png](img_8.png)
+
+```
+ <bean name="st2" class="org.example.primitive.Student">
+        <property name="id">
+            <value>122</value>
+        </property>
+        <property name="name">
+            <value>Pavy</value>
+        </property>
+        <property name="address">
+            <value>Himachal</value>
+        </property>
+    </bean>
+    
+    This is an example of XML configuration for a Spring bean named "st2" of class "org.example.primitive.Student". The bean has three properties: 
+    "id", "name", and "address".
+    The property tag is used to set the values of the properties. The name attribute specifies the name of the property, and the value 
+    tag contains the value to be set.
+    In this example, the "id" property is set to 122, the "name" property is set to "Pavy", and the "address" property is set to
+    "Himachal". These values will be injected into the corresponding properties of the "org.example.primitive.Student" class when 
+    the bean is created by the Spring IoC container.
+
+
+```
