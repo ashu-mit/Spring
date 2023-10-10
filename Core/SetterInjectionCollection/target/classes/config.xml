@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean name="st1" class="org.example.collection.Student">
+        <property name="name" value="aashu"/>
+
+        <property name="address" >
+            <list>
+                <value>india</value>
+                <value>usa</value>
+                <null></null>
+            </list>
+        </property>
+
+        <property name="phno">
+            <set>
+                <value>4354664253</value>
+                <value>5634756745</value>
+            </set>
+        </property>
+
+        <property name="courses">
+            <map>
+                <entry key="java" value="2 monts" />
+                <entry key="python" value="3 monts"/>
+            </map>
+        </property>
+
+    </bean>
+
+
+
+</beans>
