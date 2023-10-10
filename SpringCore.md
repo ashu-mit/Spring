@@ -70,3 +70,40 @@ In this type of DI, dependencies are injected through setter methods. The IoC co
 
 
 ```
+---
+
+```
+<property name="name" value="aashu"/>
+
+        <property name="address" >
+            <list>
+                <value>india</value>
+                <value>usa</value>
+                <null></null>
+            </list>
+        </property>
+        <property name="phno">
+            <set>
+                <value>4354664253</value>
+                <value>5634756745</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="java" value="2 monts" />
+                <entry key="python" value="3 monts"/>
+            </map>
+        </property>
+        
+        This is an XML snippet that defines a bean named "st1" of class "org.example.collection.Student".
+
+The bean has four properties: "name", "address", "phno", and "courses".
+
+The "name" property is a simple string value of "aashu".
+
+The "address" property is a list of three string values: "india", "usa", and null.
+
+The "phno" property is a set of two string values: "4354664253" and "5634756745".
+
+The "courses" property is a map with two key-value pairs: "java" with a value of "2 months" and "python" with a value of "3 months".
+```
