@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean name="cer" class="org.example.ci.Certificate">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="java"/>
+    </bean>
+
+    <bean name="stu" class="org.example.ci.Student">
+        <constructor-arg value="12" type="int" index="0"/>
+        <constructor-arg value="Aashu" index="1"/>
+        <constructor-arg value="pune" />
+        <constructor-arg>
+            <list>
+                <value>Python</value>
+                <value>java</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg ref="cer"/>
+    </bean>
+
+</beans>
