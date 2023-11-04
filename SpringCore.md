@@ -107,3 +107,23 @@ The "phno" property is a set of two string values: "4354664253" and "5634756745"
 
 The "courses" property is a map with two key-value pairs: "java" with a value of "2 months" and "python" with a value of "3 months".
 ```
+---
+
+>> **BEAN LIFE CYCLE**
+
+*There are three common ways to implement the Spring bean lifecycle:*
+
+**XML-based configuration**: This approach involves defining the lifecycle methods in the XML configuration file using the init-method and destroy-method attributes in the <bean> element. This approach is simple and easy to understand, but it can be verbose and difficult to maintain for large applications.
+
+**Implementing the InitializingBean and DisposableBean interfaces**: This approach involves implementing the afterPropertiesSet() method from the InitializingBean interface for initialization logic, and implementing the destroy() method from the DisposableBean interface for destruction logic. This approach is more flexible than XML-based configuration, but it requires modifying the bean class, which may not always be feasible.
+
+**Annotation-based configuration**: This approach involves using annotations like @PostConstruct and @PreDestroy to define the initialization and destruction methods respectively. This approach is concise and easy to maintain, but it requires a dependency on Spring's annotation processing.
+![img_9.png](img_9.png)
+### init()
+The init method is used to define the initialization logic for a bean. It is called after the bean has been instantiated and its dependencies have been injected. You can use this method to perform any necessary setup or initialization tasks for your bean.
+### destroy()
+The destroy method is used to define the destruction logic for a bean. It is called when the container is shutting down or when the bean is being removed from the container. You can use this method to perform any necessary cleanup or finalization tasks for your bean.
+### registerShutdownHook()
+When you call the  **registerShutdownHook()** method on an instance of **AbstractApplicationContext**, it registers a shutdown hook with the JVM. This shutdown hook ensures that the Spring application context is properly closed and all resources are released when the JVM is shutting down.
+
+By registering a shutdown hook, you ensure that the destroy methods of the beans within the application context are called, allowing them to perform any necessary cleanup or finalization tasks before the application exits.
