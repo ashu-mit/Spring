@@ -127,3 +127,42 @@ The destroy method is used to define the destruction logic for a bean. It is cal
 When you call the  **registerShutdownHook()** method on an instance of **AbstractApplicationContext**, it registers a shutdown hook with the JVM. This shutdown hook ensures that the Spring application context is properly closed and all resources are released when the JVM is shutting down.
 
 By registering a shutdown hook, you ensure that the destroy methods of the beans within the application context are called, allowing them to perform any necessary cleanup or finalization tasks before the application exits.
+
+## Autowiring in spring
+
+![img_10.png](img_10.png)
+
+![img_11.png](img_11.png)
+* #### byName
+In Spring, autowiring is a feature that allows dependencies to be automatically injected into a bean. When using XML configuration, you can use the "autowire" attribute to specify the type of autowiring you want to use. To autowire by name, you can set the "autowire" attribute to "byName" on the bean definition, like this:
+```
+<bean id="myBean" class="com.example.MyBean" autowire="byName">
+   <!-- properties of MyBean will be autowired by name -->
+</bean>
+```
+With this configuration, Spring will look for beans in the same context with names matching the properties of "MyBean" and automatically inject them.
+
+* #### byType
+When autowiring by type, Spring matches the types of beans with the types of properties in a bean. If a property type in a bean is the same as a bean defined in the XML configuration, Spring will automatically inject that bean into the property.
+
+* #### constructor
+Spring container looks at the beans on which autowire attribute is set constructor in the XML configuration file. It then tries to match and wire its constructor's argument with exactly one of the beans name in the configuration file. If matches are found, it will inject those beans.
+
+**NOTE-> ByName and ByType uses setter injection and constrctor injectoion uses constructor**
+
+### In Spring Framework, there are three types of @Autowired annotation:
+
+1) Constructor Injection: This type of autowiring is done through the constructor of a class. The @Autowired annotation is used on the constructor parameter to inject the required dependency.
+                       
+**NOTE -> no need to use @autowired when we declare constructor in a class**
+2) Setter Injection: This type of autowiring is done through a setter method of a class. The @Autowired annotation is used on the setter method to inject the required dependency.
+
+3) Field Injection: This type of autowiring is done through a field of a class. The @Autowired annotation is used on the field to inject the required dependency.
+>**@Qualifier**
+
+The @Qualifier annotation is used in Java to differentiate between beans of the same type when multiple instances are present in the application context. It is commonly used in conjunction with dependency injection frameworks like Spring.
+
+By using @Qualifier, you can specify a unique identifier for a bean, allowing you to specify which instance of the bean should be used for autowiring or injection.
+ ### primary=true
+In Spring XML configuration, the primary=true attribute is used to indicate that a bean should be given preference when multiple beans of the same type are present in the application context
+
