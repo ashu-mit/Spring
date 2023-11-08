@@ -166,3 +166,8 @@ By using @Qualifier, you can specify a unique identifier for a bean, allowing yo
  ### primary=true
 In Spring XML configuration, the primary=true attribute is used to indicate that a bean should be given preference when multiple beans of the same type are present in the application context
 
+ ### @Component
+In Spring, the  annotation is used to mark a Java class as a bean that should be managed by the Spring container. When a class is annotated with @Component, Spring will automatically detect and instantiate the bean at runtime, making it available for autowiring and injection into other beans.
+
+###  @Value
+In Spring, the  annotation is used to inject values from properties files, system properties, environment variables or other Spring beans into a Java class.
